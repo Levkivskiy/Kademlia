@@ -6,8 +6,7 @@ import node.KademliaServer
 object MainKademlia extends App {
 
   val node = new KademliaServer(KadId(), InetAddress.getLocalHost.getHostAddress, 12345)
+  val node1 = new KademliaServer(KadId(), InetAddress.getLocalHost.getHostAddress, 22343)
 
-  println(KadId().decimal.toByteArray)
-  println(KadId().decimal.bitLength)
-
+  node.bootstrap(node1.getNodeInforn)
 }
