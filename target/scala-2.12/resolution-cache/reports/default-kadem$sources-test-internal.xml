@@ -7,7 +7,7 @@
 		revision="0.1"
 		conf="test-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-		date="20181213204747"/>
+		date="20181216001219"/>
 	<dependencies>
 		<module organisation="com.typesafe.akka" name="akka-actor_2.12">
 			<revision name="2.5.19" status="release" pubdate="20181207131755" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io/" extra-info.apiURL="http://doc.akka.io/api/akka/2.5.19" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="1">
