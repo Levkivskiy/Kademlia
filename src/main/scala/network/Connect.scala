@@ -6,17 +6,18 @@ import akka.util.ByteString
 import messeges.ServerEvents._
 import node.NodeInform
 import util.Serialize
+import messeges.SocketEvents._
 
-case object Conn
-
-class Connect(nodeInform: NodeInform) extends Actor with ActorLogging {
+class Connect(nodeInform: NodeInform, connListener: ConnectHelper) extends Actor with ActorLogging {
   import context.system
 
 
   def receive = {
-    case Conn => IO(UdpConnected) ! UdpConnected.Connect(self, nodeInform.inetSocketAddress)
+    case StartConnect => IO(UdpConnected) ! UdpConnected.Connect(self, nodeInform.inetSocketAddress)
     case UdpConnected.Connected => {
-      log.info(s"Conect operation to ${nodeInform.inetSocketAddress}")
+      log.info(s"Connect operation to ${nodeInform.inetSocketAddress}")
+      //connListener ! ConnectedSuccess
+      connListener.serverWasStarting()
       context.become(ready(sender()))
     }
   }
@@ -29,5 +30,6 @@ class Connect(nodeInform: NodeInform) extends Actor with ActorLogging {
     case UdpConnected.Disconnect =>
       connection ! UdpConnected.Disconnect
     case UdpConnected.Disconnected => context.stop(self)
+
   }
 }
