@@ -62,5 +62,6 @@ class KBucketTestSpec extends FlatSpec {
     assert(kBucketsStorage.remove(connection3))
 
     assert(!kBucketsStorage.remove(connection1))
+
   }
 }
