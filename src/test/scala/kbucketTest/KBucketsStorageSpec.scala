@@ -1,5 +1,0 @@
-package kbucketTest
-
-class KBucketsStorageSpec {
-
-}

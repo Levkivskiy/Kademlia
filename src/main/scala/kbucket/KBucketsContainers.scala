@@ -23,8 +23,9 @@ class KBucketsContainers(selfId: KadId) {
 
   def remove(nodeConnect: Connect): Boolean = getkBucket(nodeConnect).remove(nodeConnect)
 
-  private def getkBucketIndex(kadId: KadId) = selfId.longestPrefixLength(kadId)
+  def getkBucketIndex(kadId: KadId): Int = selfId.longestPrefixLength(kadId)
 
-  private def getkBucket(nodeConnect: Connect) = KBuckets(KBucketsContainerSize - getkBucketIndex(nodeConnect.nodeInform.kadId) - 1)
+  def getkBucket(nodeConnect: Connect) = KBuckets(KBucketsContainerSize - getkBucketIndex(nodeConnect.nodeInform.kadId) - 1)
 
+  def getKBuckets: Array[KBucket] = KBuckets
 }
