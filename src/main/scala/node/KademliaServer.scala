@@ -9,7 +9,7 @@ import akka.pattern.ask
 import akka.util.Timeout
 import ident.KadId
 import messeges.ServerEvents.{Bootstrap, SendMsg}
-import network.{Connect, ConnectHelper}
+import network.{Connect, ConnectActor, ConnectHelper}
 
 import scala.concurrent.duration._
 import scala.concurrent.{Await, ExecutionContextExecutor}
@@ -17,9 +17,6 @@ import util.GlobalConfig._
 import messeges.SocketEvents
 import messeges.SocketEvents._
 
-@SerialVersionUID(10L)
-case class NodeInform(inetSocketAddress: InetSocketAddress, kadId: KadId)
-  extends Serializable
 
 class KademliaServer(kadId: KadId, hostName: String, port: Int) {
 
@@ -34,7 +31,7 @@ class KademliaServer(kadId: KadId, hostName: String, port: Int) {
 
   def bootstrap(nodeInf: NodeInform) = {
     newConnection(nodeInf).get match {
-      case connection: ActorRef => {
+      case Connect(_, connection) => {
         connection ! SendMsg(Bootstrap(nodeInf))
 
         connection ! UdpConnected.Disconnect
@@ -43,17 +40,18 @@ class KademliaServer(kadId: KadId, hostName: String, port: Int) {
     }
   }
 
-  def newConnection(nodeInf: NodeInform): Option[ActorRef] = {
+  def newConnection(nodeInf: NodeInform): Option[Connect] = {
     val connListener = new ConnectHelper()
-    val connection = system.actorOf(Props(new Connect(nodeInf, connListener)))
+    val connection = system.actorOf(Props(new ConnectActor(nodeInf, connListener)))
 
     connection ! StartConnect
     val waitTime = ((attemptsToConnect * timeBreakToConnectSeconds) + 5).second
     implicit val timeout: Timeout = waitTime
 
-    connListener.startWaitConn() match {
-      case true => Some(connection)
-      case false => None
+    if (connListener.startWaitConn()) {
+      Some(Connect(nodeInf, connection))
+    } else {
+      None
     }
   }
 
