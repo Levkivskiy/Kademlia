@@ -10,7 +10,7 @@ class KBucketsContainers(selfId: KadId) {
 
   def add(nodeConnect: Connect): Boolean = {
     val kBucket = getkBucket(nodeConnect)
-    if (kBucket.isFull()) {
+    if (kBucket.isFull) {
       //todo refresh operation
       false
     }
@@ -27,5 +27,12 @@ class KBucketsContainers(selfId: KadId) {
 
   def getkBucket(nodeConnect: Connect) = KBuckets(KBucketsContainerSize - getkBucketIndex(nodeConnect.nodeInform.kadId) - 1)
 
-  def getKBuckets: Array[KBucket] = KBuckets
+  def getKBucketArray = KBuckets
+
+  def zipWithIndexNonEmpty = KBuckets.zipWithIndex.filterNot(_._1.isEmpty)
+
+  def flatten = KBuckets.flatMap(_.toArray)
+
+  def update(nodeConnect: Connect) = getkBucket(nodeConnect).update(nodeConnect)
+
 }

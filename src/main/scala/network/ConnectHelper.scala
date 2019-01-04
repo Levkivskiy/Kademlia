@@ -1,8 +1,8 @@
 package network
 
 import akka.actor.{Actor, ActorLogging}
-import messeges.SocketEvents
-import messeges.SocketEvents._
+import events.SocketEvents
+import events.SocketEvents._
 import util.GlobalConfig._
 
 import scala.annotation.tailrec

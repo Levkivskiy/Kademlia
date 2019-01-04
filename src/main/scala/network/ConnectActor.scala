@@ -3,12 +3,14 @@ package network
 import akka.actor.{Actor, ActorLogging, ActorRef}
 import akka.io.{IO, UdpConnected}
 import akka.util.ByteString
-import messeges.ServerEvents._
+import events.ServerEvents._
 import node.NodeInform
 import util.Serialize
-import messeges.SocketEvents._
+import events.SocketEvents._
+import kbucket.KBucketsContainers
 
-class ConnectActor(nodeInform: NodeInform, connListener: ConnectHelper) extends Actor with ActorLogging {
+class ConnectActor(nodeInform: NodeInform, connListener: ConnectHelper, kBuckCont: KBucketsContainers)
+  extends Actor with ActorLogging {
 
   import context.system
 

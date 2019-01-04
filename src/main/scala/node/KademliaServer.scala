@@ -8,14 +8,15 @@ import akka.japi.Option.Some
 import akka.pattern.ask
 import akka.util.Timeout
 import ident.KadId
-import messeges.ServerEvents.{Bootstrap, SendMsg}
+import events.ServerEvents.{Bootstrap, SendMsg}
 import network.{Connect, ConnectActor, ConnectHelper}
 
 import scala.concurrent.duration._
 import scala.concurrent.{Await, ExecutionContextExecutor}
 import util.GlobalConfig._
-import messeges.SocketEvents
-import messeges.SocketEvents._
+import events.SocketEvents
+import events.SocketEvents._
+import kbucket.KBucketsContainers
 
 
 class KademliaServer(kadId: KadId, hostName: String, port: Int) {
@@ -42,7 +43,8 @@ class KademliaServer(kadId: KadId, hostName: String, port: Int) {
 
   def newConnection(nodeInf: NodeInform): Option[Connect] = {
     val connListener = new ConnectHelper()
-    val connection = system.actorOf(Props(new ConnectActor(nodeInf, connListener)))
+    val kBucketsContainers = new KBucketsContainers(kadId)
+    val connection = system.actorOf(Props(new ConnectActor(nodeInf, connListener, kBucketsContainers)))
 
     connection ! StartConnect
     val waitTime = ((attemptsToConnect * timeBreakToConnectSeconds) + 5).second

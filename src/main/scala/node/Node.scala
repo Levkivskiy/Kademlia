@@ -6,7 +6,7 @@ import akka.actor.{Actor, ActorLogging, ActorRef}
 import akka.io.{IO, Udp}
 import akka.util.ByteString
 import ident.KadId
-import messeges.ServerEvents.Bootstrap
+import events.ServerEvents.Bootstrap
 import util.Serialize
 
 

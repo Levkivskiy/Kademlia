@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bc1ef267-9291-47d5-91b3-5c98f0006950" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_akka_akka_testkit_2_12_2_5_19_jar.xml" afterDir="false" />
+    <list default="true" id="bc1ef267-9291-47d5-91b3-5c98f0006950" name="Default Changelist" comment="single kbucket tested">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_akka_akka_persistence_2_12_2_5_19_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_akka_akka_protobuf_2_12_2_5_19_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/events/StorageEvents.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/kbucket/StoragePersistActor.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/scala/kbucketTest/GlobalTestValue.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/scala/kbucketTest/KbuckPersistSpec.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/Kadem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Kadem.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
@@ -50,14 +55,35 @@
       <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/fullClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/fullClasspath/$global/streams/export" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/internalDependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/internalDependencyClasspath/$global/streams/export" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/managedClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/managedClasspath/$global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/kbucket/KBucket.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/kbucket/KBucket.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/kbucket/KBucketStorageActor.scala" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/kbucket/KBucketsContainers.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/kbucket/KBucketsContainers.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/messeges/ServerEvents.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/events/ServerEvents.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/messeges/SocketEvents.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/events/SocketEvents.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/network/Connect.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/network/Connect.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/network/ConnectActor.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/network/ConnectActor.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/network/ConnectHelper.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/network/ConnectHelper.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/node/KademliaServer.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/node/KademliaServer.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/node/Node.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/node/Node.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/util/GlobalConfig.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/util/GlobalConfig.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/scala/kbucketTest/KBucketTestSpec.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/kbucketTest/KBucketTestSpec.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/kbucketTest/KBucketsStorageSpec.scala" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/.history" beforeDir="false" afterPath="$PROJECT_DIR$/target/.history" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/ident/KadId$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/ident/KadId$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/ident/KadId.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/ident/KadId.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/messeges/ServerEvents$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/messeges/ServerEvents$Bootstrap$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/messeges/ServerEvents$Bootstrap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/messeges/ServerEvents$SendMsg$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/messeges/ServerEvents$SendMsg.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/messeges/ServerEvents$ServerEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/messeges/ServerEvents.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/network/Conn$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/network/Conn.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/network/Connect$$anonfun$ready$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/network/Connect$$anonfun$receive$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/network/Connect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/network/Connect.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/node/KademliaServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/node/KademliaServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/node/Node$$anonfun$ready$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/node/Node$$anonfun$ready$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/node/NodeInform$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/node/NodeInform$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/node/NodeInform.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/node/NodeInform.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/util/GlobalConfig$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/util/GlobalConfig$.class" afterDir="false" />
@@ -173,46 +199,53 @@
     <session id="2124103511">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.17" value="1" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.42" value="1" />
           <entry key="project.open.time.49" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.open.time.8" value="2" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="history" value="1" />
+          <entry key="class" value="1" />
+          <entry key="gitignore" value="2" />
+          <entry key="history" value="2" />
           <entry key="java" value="3" />
-          <entry key="sbt" value="4" />
+          <entry key="sbt" value="6" />
           <entry key="sc" value="1" />
-          <entry key="scala" value="82" />
+          <entry key="scala" value="118" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="CLASS" value="1" />
           <entry key="JAVA" value="3" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Scala" value="83" />
-          <entry key="sbt" value="4" />
+          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="Scala" value="119" />
+          <entry key="sbt" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="gitignore" value="1" />
+          <entry key="sbt" value="173" />
           <entry key="sbtShell" value="23" />
           <entry key="sc" value="57" />
-          <entry key="scala" value="3591" />
+          <entry key="scala" value="5349" />
           <entry key="txt" value="70" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="70" />
-          <entry key="Scala" value="3648" />
+          <entry key="PLAIN_TEXT" value="71" />
+          <entry key="Scala" value="5406" />
+          <entry key="sbt" value="173" />
           <entry key="sbtShell" value="23" />
         </counts>
       </usages-collector>
@@ -222,119 +255,145 @@
     <favorites_list name="Kadem" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/node/NodeInform.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-              <folding>
-                <element signature="e#14#47#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/util/GlobalConfig.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="3" column="28" lean-forward="true" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/kbucket/KBucketStorageActor.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/util/Serialize.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/scala/kbucketTest/KBucketTestSpec.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="969">
-              <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
-              <folding>
-                <element signature="e#21#48#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/kbucket/KBucket.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-              <folding>
-                <element signature="e#17#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/network/ConnectHelper.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
-              <folding>
-                <element signature="e#17#56#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/kbucket/KBucketsContainers.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="27" column="2" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
-              <folding>
-                <element signature="e#17#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/network/Connect.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-              <folding>
-                <element signature="e#17#66#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/network/ConnectActor.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="35" column="1" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
-              <folding>
-                <element signature="e#17#66#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.49809596">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/scala/util/GlobalConfig.scala">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="144">
+                  <caret line="9" column="22" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="22" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/scala/kbucket/KBucket.scala">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="272">
+                  <caret line="17" selection-start-line="17" selection-end-line="17" />
+                  <folding>
+                    <element signature="e#17#43#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/scala/events/SocketEvents.scala">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="32">
+                  <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.8-sources.jar!/scala/collection/mutable/SetLike.scala">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="186">
+                  <caret line="121" column="87" selection-start-line="121" selection-start-column="24" selection-end-line="121" selection-end-column="87" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/scala/kbucket/StoragePersistActor.scala">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="768">
+                  <caret line="48" column="3" selection-start-line="48" selection-start-column="3" selection-end-line="48" selection-end-column="3" />
+                  <folding>
+                    <element signature="e#17#36#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/test/scala/kbucketTest/KbuckPersistSpec.scala">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="208">
+                  <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+                  <folding>
+                    <element signature="e#20#63#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/scala/kbucketTest/KBucketTestSpec.scala">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="192">
+                  <caret line="12" column="38" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="38" />
+                  <folding>
+                    <element signature="e#21#48#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/scala/kbucketTest/GlobalTestValue.scala">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="112">
+                  <caret line="7" column="22" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="22" />
+                  <folding>
+                    <element signature="e#21#48#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/build.sbt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="256">
+                  <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/scala/kbucket/KBucketsContainers.scala">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="528">
+                  <caret line="33" column="43" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
+                  <folding>
+                    <element signature="e#17#35#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/scala/events/StorageEvents.scala">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="128">
+                  <caret line="8" column="71" selection-start-line="8" selection-start-column="71" selection-end-line="8" selection-end-column="71" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/scala/kbucket/StoragePersistActor.scala">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="144">
+                  <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+                  <folding>
+                    <element signature="e#17#36#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -371,21 +430,27 @@
         <option value="$PROJECT_DIR$/src/main/scala/network/ConnectHelper.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/KBucket/KBucketStorageActor.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/node/NodeInform.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/util/GlobalConfig.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/KBucket/KBucketsContainers.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/KBucket/KBucket.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/MainKademlia.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/App/KBucket.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/App/Test.sc" />
         <option value="$PROJECT_DIR$/src/main/scala/messeges/SocketEvents.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/network/ConnectActor.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/ident/KadId.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/node/KademliaServer.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/kbucket/KBucket.scala" />
+        <option value="$PROJECT_DIR$/target/.gitignore" />
+        <option value="$PROJECT_DIR$/src/main/scala/kbucket/KBucketStorageActor.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/network/ConnectActor.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/network/Connect.scala" />
-        <option value="$PROJECT_DIR$/build.sbt" />
+        <option value="$PROJECT_DIR$/src/main/scala/node/KademliaServer.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/util/GlobalConfig.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/events/StorageEvents.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/kbucket/KBucket.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/kbucket/KBucketsContainers.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/kbucket/StoragePersistActor.scala" />
+        <option value="$PROJECT_DIR$/build.sbt" />
+        <option value="$PROJECT_DIR$/src/test/scala/kbucketTest/GlobalTestValue.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/kbucketTest/KBucketTestSpec.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/kbucketTest/KbuckPersistSpec.scala" />
       </list>
     </option>
   </component>
@@ -395,10 +460,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-10" />
-    <option name="width" value="1165" />
-    <option name="height" value="1050" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -455,6 +521,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="events" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kadem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kadem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
               <item name="ident" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -464,14 +538,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="scala" type="462c0819:PsiDirectoryNode" />
               <item name="kbucket" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kadem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kadem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="scala" type="462c0819:PsiDirectoryNode" />
-              <item name="messeges" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Kadem" type="b2602c69:ProjectViewProjectNode" />
@@ -518,24 +584,19 @@
               <item name="scala" type="462c0819:PsiDirectoryNode" />
               <item name="kbucketTest" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Kadem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kadem" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546456660063" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546625927009" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../KademliaExample/kademlia-dht" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Global Libraries" />
@@ -616,8 +677,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="3090998166563" />
-        <entry key="$PROJECT_DIR$/build.sbt" value="3241912202" />
+        <entry key="$PROJECT_DIR$/build.sbt" value="3162072557" />
         <entry key="$PROJECT_DIR$/project/build.properties" value="162545940" />
       </map>
     </option>
@@ -655,6 +715,8 @@
       <workItem from="1546431765783" duration="16962000" />
       <workItem from="1546456741157" duration="867000" />
       <workItem from="1546457716902" duration="1951000" />
+      <workItem from="1546465002572" duration="1109000" />
+      <workItem from="1546598946287" duration="17338000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1544916249974</created>
@@ -670,11 +732,18 @@
       <option name="project" value="LOCAL" />
       <updated>1546452132348</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="single kbucket tested">
+      <created>1546465101877</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1546465101877</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101450000" />
+    <option name="totallyTimeSpent" value="119897000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -686,7 +755,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="932" height="840" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
@@ -694,9 +763,9 @@
       <window_info id="Favorites" order="2" sideWeight="0.5021097" side_tool="true" weight="0.14697987" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.4978903" visible="true" weight="0.20412844" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.4978903" visible="true" weight="0.118791945" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="sbt-shell-toolwindow" order="0" visible="true" weight="0.37570623" />
+      <window_info anchor="bottom" id="sbt-shell-toolwindow" order="0" weight="0.37570623" />
       <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49798658" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.50201344" side_tool="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Messages" order="3" weight="0.32152975" />
@@ -739,8 +808,6 @@
     <option name="moduleName" value="Kadem" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.ivy2/cache/com.typesafe.akka/akka-actor_2.12/srcs/akka-actor_2.12-2.5.19-sources.jar!/akka/actor/setup/ActorSystemSetup.scala" />
-    <entry file="jar://$USER_HOME$/.ivy2/cache/com.typesafe.akka/akka-actor_2.12/srcs/akka-actor_2.12-2.5.19-sources.jar!/akka/util/Reflect.scala" />
     <entry file="jar://$USER_HOME$/.ivy2/cache/com.typesafe.akka/akka-actor_2.12/srcs/akka-actor_2.12-2.5.19-sources.jar!/akka/dispatch/AbstractDispatcher.scala" />
     <entry file="jar://$USER_HOME$/.ivy2/cache/com.typesafe.akka/akka-actor_2.12/srcs/akka-actor_2.12-2.5.19-sources.jar!/akka/actor/ActorSystem.scala" />
     <entry file="jar://$USER_HOME$/.ivy2/cache/com.typesafe.akka/akka-actor_2.12/srcs/akka-actor_2.12-2.5.19-sources.jar!/akka/pattern/AskSupport.scala" />
@@ -749,9 +816,6 @@
     <entry file="jar://F:/Programs/Java/jdk1.8.0_191/src.zip!/java/net/InetSocketAddress.java" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/Test.sc" />
     <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.8-sources.jar!/scala/concurrent/package.scala" />
-    <entry file="file://$PROJECT_DIR$/target/.history">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="jar://$USER_HOME$/.ivy2/cache/com.typesafe.akka/akka-actor_2.12/srcs/akka-actor_2.12-2.5.19-sources.jar!/akka/dispatch/forkjoin/ForkJoinTask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
@@ -808,13 +872,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/messeges/ServerEvents.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/App/KBucket.scala" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/App/Test.sc">
       <provider selected="true" editor-type-id="text-editor" />
@@ -833,6 +890,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/MainKademlia.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/kbucketTest/KBucketsStorageSpec.scala" />
+    <entry file="file://$PROJECT_DIR$/src/main/scala/node/NodeInform.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/util/Serialize.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/.history">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/core/KademliaNode.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -847,30 +936,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/node/Node.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/messeges/SocketEvents.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/MainKademlia.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/ident/KadId.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
+        <state relative-caret-position="176">
           <caret line="11" column="45" lean-forward="true" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
           <folding>
             <element signature="e#15#46#0" expanded="true" />
@@ -878,64 +946,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/kbucketTest/KBucketsStorageSpec.scala" />
-    <entry file="file://$PROJECT_DIR$/build.sbt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="76" selection-start-line="7" selection-start-column="76" selection-end-line="7" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/node/KademliaServer.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-          <folding>
-            <element signature="e#14#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/node/NodeInform.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-          <folding>
-            <element signature="e#14#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/util/Serialize.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/network/Connect.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-          <folding>
-            <element signature="e#17#66#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/network/ConnectActor.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="35" column="1" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
-          <folding>
-            <element signature="e#17#66#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/network/ConnectHelper.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
+        <state relative-caret-position="288">
           <caret line="18" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="e#17#56#0" expanded="true" />
@@ -943,27 +956,106 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/util/GlobalConfig.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/kbucket/KBucketStorageActor.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="28" lean-forward="true" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+        <state relative-caret-position="112">
+          <caret line="7" column="57" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
+          <folding>
+            <element signature="e#17#56#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/kbucketTest/KBucketTestSpec.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/events/ServerEvents.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+        <state relative-caret-position="208">
+          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/com.typesafe.akka/akka-actor_2.12/srcs/akka-actor_2.12-2.5.19-sources.jar!/akka/io/Tcp.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="118" column="19" selection-start-line="118" selection-start-column="19" selection-end-line="118" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/network/ConnectActor.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
           <folding>
-            <element signature="e#21#48#0" expanded="true" />
+            <element signature="e#17#66#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/node/Node.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/network/Connect.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+          <folding>
+            <element signature="e#17#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.8-sources.jar!/scala/Predef.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="287" column="6" selection-start-line="287" selection-start-column="6" selection-end-line="287" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/node/KademliaServer.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+          <folding>
+            <element signature="e#14#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.8-sources.jar!/scala/collection/mutable/SetLike.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="121" column="87" selection-start-line="121" selection-start-column="24" selection-end-line="121" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/events/SocketEvents.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/util/GlobalConfig.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.8-sources.jar!/scala/collection/TraversableOnce.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="210" column="6" selection-start-line="210" selection-start-column="6" selection-end-line="210" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/kbucket/KBucket.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+        <state relative-caret-position="272">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="e#17#43#0" expanded="true" />
           </folding>
@@ -972,18 +1064,72 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/kbucket/KBucketsContainers.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="27" column="2" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
+        <state relative-caret-position="528">
+          <caret line="33" column="43" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
           <folding>
             <element signature="e#17#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/kbucket/KBucketStorageActor.scala">
+    <entry file="jar://$USER_HOME$/.sbt/boot/scala-2.12.7/org.scala-sbt/sbt/1.2.7/librarymanagement-core_2.12-1.2.3.jar!/sbt/librarymanagement/LibraryManagementSyntax.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        <state relative-caret-position="112">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.sbt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/events/StorageEvents.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="71" selection-start-line="8" selection-start-column="71" selection-end-line="8" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/kbucket/StoragePersistActor.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="768">
+          <caret line="48" column="3" selection-start-line="48" selection-start-column="3" selection-end-line="48" selection-end-column="3" />
+          <folding>
+            <element signature="e#17#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/kbucketTest/KBucketTestSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="12" column="38" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="38" />
+          <folding>
+            <element signature="e#21#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/kbucketTest/GlobalTestValue.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="22" />
+          <folding>
+            <element signature="e#21#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/kbucketTest/KbuckPersistSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+          <folding>
+            <element signature="e#20#63#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

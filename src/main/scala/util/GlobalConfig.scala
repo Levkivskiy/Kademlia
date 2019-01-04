@@ -6,4 +6,6 @@ object GlobalConfig {
 
   val KBucketMaxCapacity = 5
   val KBucketsContainerSize = 160
+
+  val snapShotInterval = 1000
 }

@@ -3,10 +3,10 @@ package network
 import akka.actor.{Actor, ActorLogging, ActorRef}
 import akka.io.{IO, UdpConnected}
 import akka.util.ByteString
-import messeges.ServerEvents._
+import events.ServerEvents._
 import node.NodeInform
 import util.Serialize
-import messeges.SocketEvents._
+import events.SocketEvents._
 
 case class Connect(nodeInform: NodeInform, connectActor: ActorRef)
 
@@ -16,3 +16,4 @@ object Connect {
       conn.nodeInform
   }
 }
+
