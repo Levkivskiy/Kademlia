@@ -1,4 +1,4 @@
-package kbucket
+package kBucketTest
 
 import ident.KadId
 import network.Connect
@@ -29,7 +29,7 @@ class KBucketsContainers(selfId: KadId) {
 
   def getKBucketArray = KBuckets
 
-  def zipWithIndexNonEmpty = KBuckets.zipWithIndex.filterNot(_._1.isEmpty)
+  def zipWithIndexNonEmpty: Array[(KBucket, Int)] = KBuckets.zipWithIndex.filterNot(_._1.isEmpty)
 
   def flatten = KBuckets.flatMap(_.toArray)
 

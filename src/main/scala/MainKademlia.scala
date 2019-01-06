@@ -9,4 +9,5 @@ object MainKademlia extends App {
   val node1 = new KademliaServer(KadId(), InetAddress.getLocalHost.getHostAddress, 22343)
 
   node.bootstrap(node1.getNodeInforn)
+
 }

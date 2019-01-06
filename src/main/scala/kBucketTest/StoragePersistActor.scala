@@ -1,13 +1,14 @@
-package kbucket
+package kBucketTest
 
 import akka.actor._
 import akka.persistence._
-import events.StorageEvents._
+import messeges.StorageEvents._
 import ident.KadId
 import network.Connect
 import util.GlobalConfig.snapShotInterval
 
-class StoragePersistActor(kadId: KadId, persistId: String) extends PersistentActor {
+class StoragePersistActor(kadId: KadId, persistId: String)
+  extends PersistentActor with ActorLogging {
 
   var kBuckCont = new KBucketsContainers(kadId)
 
@@ -45,6 +46,8 @@ class StoragePersistActor(kadId: KadId, persistId: String) extends PersistentAct
       }
 
       //for testing
-    case "print" => kBuckCont.zipWithIndexNonEmpty.foreach(println)
+      //todo replace
+    case "storage" =>
+      sender() ! kBuckCont.zipWithIndexNonEmpty
   }
 }

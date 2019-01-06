@@ -1,11 +1,11 @@
-package kbucketTest
+package kBucketTest
 
 import java.net.InetAddress
 
 import akka.actor.{ActorRef, ActorSystem}
 import ident.KadId
 import org.scalatest.FlatSpec
-import kbucket.{KBucket, KBucketsContainers}
+import kBucketTest.{KBucket, KBucketsContainers}
 import network.Connect
 import node.KademliaServer
 import GlobalTestValue._

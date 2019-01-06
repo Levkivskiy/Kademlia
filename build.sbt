@@ -6,7 +6,7 @@ scalaVersion := "2.12.8"
 
 val akka = Seq(
   "com.typesafe.akka" %% "akka-actor" % "2.5.19",
-  "com.typesafe.akka" %% "akka-persistence" % "2.5.19"
+  "com.typesafe.akka" %% "akka-persistence" % "2.5.19",
 )
 
 val testDep = Seq(
@@ -15,3 +15,4 @@ val testDep = Seq(
 )
 
 libraryDependencies ++= akka ++ testDep
+ 

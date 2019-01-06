@@ -8,15 +8,15 @@ import akka.japi.Option.Some
 import akka.pattern.ask
 import akka.util.Timeout
 import ident.KadId
-import events.ServerEvents.{Bootstrap, SendMsg}
+import messeges.ServerEvents.{Bootstrap, SendMsg}
 import network.{Connect, ConnectActor, ConnectHelper}
 
 import scala.concurrent.duration._
 import scala.concurrent.{Await, ExecutionContextExecutor}
 import util.GlobalConfig._
-import events.SocketEvents
-import events.SocketEvents._
-import kbucket.KBucketsContainers
+import messeges.SocketEvents
+import messeges.SocketEvents._
+import kBucketTest.KBucketsContainers
 
 
 class KademliaServer(kadId: KadId, hostName: String, port: Int) {

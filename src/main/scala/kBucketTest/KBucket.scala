@@ -1,4 +1,4 @@
-package kbucket
+package kBucketTest
 
 import akka.actor.ActorRef
 import network.Connect
